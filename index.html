@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,user-scalable=no"/>
+	<title>ВЫЗОВ ФСБ v1.0</title>
+</head>
+<body>
+<script type="text/javascript" src="libs/point.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+<script type="text/javascript" src="js/gird.js"></script>
+<script type="text/javascript" src="js/pl.js"></script>
+<script type="text/javascript" src="js/blocks.js"></script>
+<script type="text/javascript">
+	
+
+
+createLevel(10);
+
+
+game.newLoop('game', function () {
+
+	calcScore = 'Score: ' + Math.round(-score/10);
+
+	game.fill('#cdcebb');
+
+	drawGird();
+
+	drawPlayer();
+
+	drawLevel();
+
+	brush.drawTextS({
+		x : 10, y : 10,
+		text : calcScore,
+		size : 300 * coeff,
+		font : 'serif',
+		color : '#515151' 
+	});
+
+})
+
+game.startLoop('game');
+
+
+</script>
+</body>
+</html>
